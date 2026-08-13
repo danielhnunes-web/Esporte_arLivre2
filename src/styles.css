@@ -5,6 +5,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    background-color: var(--fundo);
+}
+
 :root {
     --verde: #16A34A;
     --verde-claro: #4ADE80;
