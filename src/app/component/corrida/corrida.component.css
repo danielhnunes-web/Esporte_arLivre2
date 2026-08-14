@@ -1,0 +1,153 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    background-color: var(--fundo);
+}
+
+
+#form {
+    width: min(100%, 560px);
+    margin: 20px auto;
+    padding: 28px;
+    box-sizing: border-box;
+
+    background-color: var(--branca);
+    border: 1px solid var(--cinza);
+    border-radius: 8px;
+
+    box-shadow: 0 4px 12px rgba(23, 32, 51, 0.10);
+}
+
+
+#form h2 {
+    margin: 0 0 25px;
+    color: var(--texto);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+#form-corrida {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#form-corrida label {
+    margin-bottom: 7px;
+    color: var(--texto);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+#form-corrida input[type="text"],
+#form-corrida input[type="date"] {
+    width: 100%;
+    height: 42px;
+    margin-bottom: 18px;
+    padding: 0 12px;
+
+    box-sizing: border-box;
+
+    border: 1px solid var(--cinza);
+    border-radius: 5px;
+
+    background-color: var(--branca);
+    color: var(--texto);
+
+    font-size: 14px;
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+#form-corrida input::placeholder {
+    color: #94A3B8;
+}
+
+
+#form-corrida input[type="text"]:focus,
+#form-corrida input[type="date"]:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.12);
+}
+
+
+#form-corrida label[for="distancias"] {
+    margin-bottom: 8px;
+}
+
+#form-corrida input[type="radio"] {
+    width: 14px;
+    height: 14px;
+    margin: 0 5px 18px 0;
+
+    accent-color: var(--azul);
+    cursor: pointer;
+}
+
+#form-corrida input.radio01,
+#form-corrida input.radio02,
+#form-corrida input.radio03 {
+    margin-left: 12px;
+}
+
+.distancias {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+}
+
+.distancias label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+}
+  
+.distancias input[type="radio"] {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    accent-color: var(--azul);
+    cursor: pointer;
+}
+
+#div-btns {
+    margin-top: 5px;
+}
+
+#div-btns button {
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: var(--botao01);
+    color: var(--branca);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#div-btns button:hover {
+    background-color: var(--azul);
+    transform: translateY(-1px);
+}
+
+#div-btns button:active {
+    transform: translateY(0);
+}
