@@ -58,6 +58,11 @@ button{
     border: none;
     color: var(--branca);
     font-size: 20px;
+    transition: 0.3s;
+}
+
+#div-btns button:active {
+    transform: translateY(0);
 }
 
 #btnAdd{
@@ -65,7 +70,18 @@ button{
     margin-right: 20px;
 }
 
+#btnAdd:hover {
+    background-color: var(--azul);
+    transform: translateY(-1px);
+}
+
 #btnLimpar{
     background-color: var(--botao02);
     margin-right: 20px;
 }
+
+#btnLimpar:hover {
+    background-color: rgb(223, 126, 0);
+    transform: translateY(-1px);
+}
+
