@@ -151,3 +151,10 @@
 #div-btns button:active {
     transform: translateY(0);
 }
+
+#div-btns button:disabled{
+    color: #cbd5e1;
+    background: #94A3B8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
