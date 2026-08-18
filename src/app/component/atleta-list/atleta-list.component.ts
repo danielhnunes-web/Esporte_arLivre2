@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Atleta } from '../../models/Atleta';
 import { AtletaServiceService } from '../../service/atleta-service.service';
 import { Router } from '@angular/router';
+import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-atleta-list',
@@ -13,25 +14,27 @@ import { Router } from '@angular/router';
 
 export class AtletaListComponent {
 
-  listaAtletas: Atleta[] = [];
+  listaAtletas = signal<Atleta[]>([]);
 
   constructor( private listaService: AtletaServiceService,
-    private router : Router) {};
+    private router : Router) {}
 
   ngOnInit(){
-    this.listar();
+    this.listar()
   };
 
   listar() {
     this.listaService.listarAtletas()
       .subscribe({
         next: (dadosAtletas) => {
-          this.listaAtletas = [...dadosAtletas].
-          sort((a, b) => a.nome.localeCompare(b.
-          nome))
-          console.table(this.listaAtletas)
+          // this.listaAtletas = [...dadosAtletas].
+          // sort((a, b) => a.nome.localeCompare(b.
+          // nome))
+          this.listaAtletas.set([...dadosAtletas].sort((a, b) => a.
+          nome.localeCompare(b.nome)));
+
+          console.table(this.listaAtletas())
   
-          return this.listaAtletas
         },
         error: (msgErro) => {
           console.log("Erro ao listar Atletas "
@@ -41,5 +44,27 @@ export class AtletaListComponent {
   
     return this.listaAtletas;
   };
+
+  excluir(id: number) {
+    if (confirm("Deseja Excluir o Atleta?")) {
+      this.listaService.excluirAtleta(id)
+        .subscribe({
+          next: (resposta) => {
+            console.log("Excluído com Sucesso!!! ", 
+            resposta)
+  
+            this.listar()
+          },
+          error: (msgErro) => {
+            console.log("Erro ao listar Atletas ", msgErro)
+          }
+        })
+    }
+  };
+
+  carregaDadosAtletaForm(atleta: Atleta) {
+    this.router.navigate(['/cadastroAtleta', atleta.id])
+  };
+  
 
 }
