@@ -7,7 +7,7 @@
                 {{ elem.id }} - {{ elem.nome }} - {{ elem.cpf }} - {{ elem.cidade }} - {{ elem.uf }}
             </span>
             <span class="span-lnk-atletas">
-                <a class="lnk-atleta lnk-alterar" (click)="carregaDadosAtletaForm(atleta: elem)">A</a>
+                <a class="lnk-atleta lnk-alterar" (click)="carregaDadosAtletaForm(elem)">A</a>
                 <a class="lnk-atleta lnk-excluir" (click)="excluir(elem.id)">E</a>
 
             </span>
