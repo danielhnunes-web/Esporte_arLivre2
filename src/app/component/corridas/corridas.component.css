@@ -1,4 +1,4 @@
-#section-lista-Atleta {
+#section-lista-Corrida {
     width: 1000px;
     min-height: 550px;
     margin: 20px auto;
@@ -7,7 +7,7 @@
     font-size: 20px;
 }
   
-.atleta-item {
+.corrida-item {
     width: 100%;
     min-height: 35px;
     padding: 10px 15px;
@@ -17,16 +17,16 @@
     justify-content: space-between;
 }
   
-.atleta-item:hover {
+.corrida-item:hover {
     background-color: var(--amarelo);
 }
   
-.span-dados-atleta {
+.span-dados-corrida {
     width: 90%;
     height: 100%;
 }
   
-.span-lnk-atletas {
+.span-lnk-corridas {
     width: 10%;
     height: 100%;
     display: flex;
@@ -34,22 +34,22 @@
     justify-content: space-around;
 }
   
-.lnk-atleta {
+.lnk-corrida {
     text-decoration: none;
     cursor: pointer;
     font-weight: bold;
 }
 
-.atleta-item:hover {
+.corrida-item:hover {
     background-color: var(--amarelo);
 }
   
-.span-dados-atleta {
+.span-dados-corrida {
     width: 90%;
     height: 100%;
 }
   
-.span-lnk-atletas {
+.span-lnk-corridas {
     width: 10%;
     height: 100%;
     display: flex;
@@ -57,7 +57,7 @@
     justify-content: space-around;
 }
   
-.lnk-atleta {
+.lnk-corrida {
     text-decoration: none;
     cursor: pointer;
     font-weight: bold;

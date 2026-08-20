@@ -1,0 +1,43 @@
+<section id="section-lista-Corrida">
+
+    <h2>Lista de Corridas</h2>
+
+    @for(elem of listaCorridas(); track elem.id) {
+
+        <div class="corrida-item">
+
+            <span class="span-dados-corrida">
+                {{ elem.id }} -
+                {{ elem.descricao }} -
+                {{ elem.data }} -
+                {{ elem.local }} -
+                {{ elem.distancia }}
+            </span>
+
+            <span class="span-lnk-corridas">
+
+                <a
+                    class="lnk-corrida lnk-alterar"
+                    (click)="carregaDadosCorridaForm(elem)">
+                    A
+                </a>
+
+                <a
+                    class="lnk-corrida lnk-excluir"
+                    (click)="excluirCorrida(elem.id)">
+                    E
+                </a>
+
+            </span>
+
+        </div>
+
+    } @empty {
+
+        <div class="div-item-corrida">
+            NENHUMA CORRIDA REGISTRADA
+        </div>
+
+    }
+
+</section>

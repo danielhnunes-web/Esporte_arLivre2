@@ -75,7 +75,7 @@
         </div>
 
         <div id="div-btns">
-            <button type="submit" [disabled]="formCorrida.invalid">Cadastrar Corrida</button>
+            <button type="submit" [disabled]="formCorrida.invalid">{{ !editar ? 'Cadastrar Corrida' : 'Alterar Corrida' }}</button>
         </div>
 
     </form>
