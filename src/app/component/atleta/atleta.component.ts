@@ -17,6 +17,7 @@ export class AtletaComponent {
   nome = ''
   cpf = 0
   sexo = ''
+  dataNascimento = ''
   cep = 0
   ruaLogradouro = ''
   bairro = ''
@@ -50,6 +51,7 @@ export class AtletaComponent {
     this.nome = ''
     this.cpf = 0
     this.sexo = ''
+    this.dataNascimento = ''
     this.cep = 0
     this.ruaLogradouro = ''
     this.bairro = ''
@@ -64,6 +66,7 @@ export class AtletaComponent {
         this.nome = dadosAtleta.nome
         this.cpf = dadosAtleta.cpf
         this.sexo = dadosAtleta.sexo
+        this.dataNascimento = dadosAtleta.dataNascimento
         this.cep = dadosAtleta.cep
         this.ruaLogradouro = dadosAtleta.ruaLogradouro
         this.bairro = dadosAtleta.bairro
@@ -83,6 +86,7 @@ export class AtletaComponent {
     atleta.nome = this.nome
     atleta.cpf = this.cpf
     atleta.sexo = this.sexo
+    atleta.dataNascimento = this.dataNascimento
     atleta.cep = this.cep
     atleta.ruaLogradouro = this.ruaLogradouro
     atleta.bairro = this.bairro

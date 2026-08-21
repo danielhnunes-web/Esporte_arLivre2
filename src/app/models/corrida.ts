@@ -3,5 +3,5 @@ export class Corrida{
     descricao: string = '';
     data: Date = new Date();
     local: string = '';
-    distancia: number = 0;
+    distancias: number[] = [];
 }

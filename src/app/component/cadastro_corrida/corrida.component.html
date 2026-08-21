@@ -41,33 +41,30 @@
 
             <label>
                 <input
-                    type="radio"
-                    name="distancia"
-                    value="5"
-                    [(ngModel)]="distancia"
-                    required
+                    type="checkbox"
+                    name="distancia5"
+                    [checked]="distancias.includes(5)"
+                    (change)="selecionarDistancia(5, $event)"
                 >
                 5km
             </label>
 
             <label>
                 <input
-                    type="radio"
-                    name="distancia"
-                    value="10"
-                    [(ngModel)]="distancia"
-                    required
+                    type="checkbox"
+                    name="distancia10"
+                    [checked]="distancias.includes(10)"
+                    (change)="selecionarDistancia(10, $event)"
                 >
                 10km
             </label>
 
             <label>
                 <input
-                    type="radio"
-                    name="distancia"
-                    value="25"
-                    [(ngModel)]="distancia"
-                    required
+                    type="checkbox"
+                    name="distancia25"
+                    [checked]="distancias.includes(25)"
+                    (change)="selecionarDistancia(25, $event)"
                 >
                 25km
             </label>

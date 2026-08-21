@@ -15,7 +15,7 @@ export class CorridaComponent implements OnInit{
   descricao = '';
   data = '';
   local = '';
-  distancia = 0;
+  distancias: number[] = [];
 
   idCorrida = 0
   editar = false
@@ -33,20 +33,14 @@ export class CorridaComponent implements OnInit{
       this.descricao = corrida.descricao;
       this.data = this.formatarData(corrida.data);
       this.local = corrida.local;
-      this.distancia = corrida.distancia;
+      this.distancias = [...corrida.distancias];
   
       // IMPORTANTE: limpa depois de carregar a corrida
       this.corridaService.limparCorridaSelecionada();
   
     } else {
   
-      this.editar = false;
-      this.idCorrida = 0;
-      this.descricao = '';
-      this.data = '';
-      this.local = '';
-      this.distancia = 0;
-  
+      this.novoCadastro()
     }
   };
 
@@ -59,8 +53,40 @@ export class CorridaComponent implements OnInit{
     return `${ano}-${mes}-${dia}`;
   }
 
+  selecionarDistancia(
+    distancia: number,
+    event: Event
+  ) {
+
+    const checkbox =
+      event.target as HTMLInputElement;
+
+    if (checkbox.checked) {
+
+      if (!this.distancias.includes(distancia)) {
+
+        this.distancias.push(distancia);
+
+      }
+
+    } else {
+
+      this.distancias =
+        this.distancias.filter(
+          item => item !== distancia
+        );
+
+    }
+
+    console.log(
+      'Distâncias selecionadas:',
+      this.distancias
+    );
+
+  }
+
   exibirDados(){
-    console.log(this.descricao, this.data, this.local, this.distancia);
+    console.log(this.descricao, this.data, this.local, this.distancias);
 
     this.LimparDados();
   };
@@ -69,7 +95,7 @@ export class CorridaComponent implements OnInit{
     this.descricao = '';
     this.data = '';
     this.local = '';
-    this.distancia = 0;
+    this.distancias = [];
   };
 
   cadastrar(){
@@ -78,7 +104,7 @@ export class CorridaComponent implements OnInit{
     corrida.descricao = this.descricao;
     corrida.data = new Date(this.data);
     corrida.local = this.local;
-    corrida.distancia = this.distancia;
+    corrida.distancias = [...this.distancias];
 
     if(this.editar){
       corrida.id = this.idCorrida
@@ -106,7 +132,7 @@ export class CorridaComponent implements OnInit{
     this.descricao = '';
     this.data = '';
     this.local = '';
-    this.distancia = 0;
+    this.distancias = [];
   
     this.corridaService.limparCorridaSelecionada();
   
