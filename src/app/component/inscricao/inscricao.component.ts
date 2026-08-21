@@ -252,19 +252,12 @@ export class InscricaoComponent implements OnInit {
     );
 
     console.log('===== INSCRIÇÃO =====');
-
-    console.log('Atleta:', atleta);
-
+    console.log('Atleta:', atleta)
     console.log('Corrida:', corrida);
-
     console.log('Distância:', this.distancias);
-
     console.log('Camiseta:', this.tamanhoCamiseta);
-
     console.log('Categoria:', this.categoria);
-
     console.log('Valor:', this.valorInscricao);
-
     alert('Inscrição realizada com sucesso!');
 
   }
